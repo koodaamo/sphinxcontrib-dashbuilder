@@ -170,7 +170,7 @@ class DashBuilder(StandaloneHTMLBuilder):
 
         ## from created env index entries
         entries = self.env.create_index(self)
-        for entryname, (links, subitems) in itertools.chain(*[x[1] for x in entries]):
+        for entryname, (links, subitems, _) in itertools.chain(*[x[1] for x in entries]):
             for y in self._indexentries(entryname, None, links):
                 yield y
             for subentryname, subentrylinks in subitems:
